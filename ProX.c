@@ -21,6 +21,10 @@
 
 pthread_key_t tls_key_threadnr;
 
+
+extern void start_net_task(void);
+
+
 int main(void)
 {
 	int x = 0;
@@ -28,6 +32,8 @@ int main(void)
 
 	pthread_key_create(&tls_key_threadnr, NULL);
 	pthread_setspecific (tls_key_threadnr, "Main");
+
+	start_net_task();
 
 	for(i = 0;i<1000;i++)
 	{

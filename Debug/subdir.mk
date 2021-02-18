@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../NetTask.c \
 ../ProX.c \
 ../log.c 
 
 OBJS += \
+./NetTask.o \
 ./ProX.o \
 ./log.o 
 
 C_DEPS += \
+./NetTask.d \
 ./ProX.d \
 ./log.d 
 
