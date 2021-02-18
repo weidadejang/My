@@ -4,20 +4,20 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../NetTask.c \
-../ProX.c 
+../util/list.c \
+../util/log.c 
 
 OBJS += \
-./NetTask.o \
-./ProX.o 
+./util/list.o \
+./util/log.o 
 
 C_DEPS += \
-./NetTask.d \
-./ProX.d 
+./util/list.d \
+./util/log.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-%.o: ../%.c
+util/%.o: ../util/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
 	gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
